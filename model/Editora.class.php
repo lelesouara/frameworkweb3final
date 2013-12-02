@@ -1,6 +1,6 @@
 <?php
 
-/**
+     /**
      * Editora Class
      */
 
@@ -22,7 +22,6 @@
             }
         }
 
-
         public function getCod() {
             return $this->cod;
         }
@@ -40,6 +39,11 @@
         }
 
         public function getLivros() {
+            if(!count($this->livros)){
+                $criteria = new Criteria();
+                $criteria->addCondition('codEditora', '=', $this->cod);
+                $this->livros = Livros::getList($criteria);
+            }
             return $this->livros;
         }
 

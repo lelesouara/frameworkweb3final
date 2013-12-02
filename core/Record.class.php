@@ -74,6 +74,36 @@
                 return $db->execute();
             }
         }
+        
+        public static function getList(Criteria $criteria = null ){
+            $db = new MysqlDB();
+            $class = get_called_class();
+            $table = $class::TABLE;
+            $q = "SELECT * FROM $table";
+            if(empty($criteria)){
+                $db->query($q);
+                return $db->getResults();
+            }
+            if($criteria->getConditions()){
+                $conditions = array();
+                foreach ($criteria->getConditions() as $c){
+                    $conditions[] = $c[0].' '.$c[1].' :'.$c[0];
+                }
+                $q .= ' WHERE'.  implode(' AND ', $conditions);
+            }
+            
+            if($criteria->getOrder())
+                $q .= ' ORDER BY '.$criteria->getOrder();
+            
+            if($criteria->getLimit())
+                $q .= ' LIMIT '.$criteria->getLimit();
+            
+            $db->query($q);
+            foreach ($criteria->getConditions() as $c){
+                $db->bind(':'.$c[0], $c[2]);
+            }
+            return $db->getResults($class);
+        }
     }
 
 ?>
