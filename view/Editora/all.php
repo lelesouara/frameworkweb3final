@@ -1,3 +1,5 @@
 <?php
 
-print_r($editoras);
+foreach ($editoras as $editora){
+    echo $editora->getNome()."<br>";
+}
