@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title><?php echo $title; ?></title>
         <link rel="stylesheet" href="template/default/css/style.css" type="text/css">
     </head>
     <body>
@@ -20,7 +20,7 @@
                     </ul>
                 </nav>
                 <article>
-                    
+                    <?php include $view; ?>
                 </article>
             </div>
             <footer>

@@ -1,0 +1,5 @@
+SQLSTATE[42000] [1049] Unknown database 'web3aulas'
+SQLSTATE[42000] [1049] Unknown database 'web3aulas'
+SQLSTATE[42000] [1049] Unknown database 'web3aulas'
+SQLSTATE[42000] [1049] Unknown database 'web3aulas'
+SQLSTATE[42000] [1049] Unknown database 'web3aulas'
