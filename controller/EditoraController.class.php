@@ -19,7 +19,17 @@ class EditoraController {
     }
 
     public function add() {
+        if(count($_POST)){
+            $nome = $_POST['nome'];
+            $Editora = new Editora();
+            $Editora->setNome($nome);
+            $Editora->save();
+            header("Location: index.php?mod=Editora&page=all");
+        }
         
+        $view = new View("Editora", "add", "default");
+        $view->setTitle("Cadastrar Editora");
+        $view->render();
     }
 
     public function edit() {
