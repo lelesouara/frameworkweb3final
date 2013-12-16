@@ -43,6 +43,11 @@ nav ul li{
     text-shadow: 1px 1px 0px #354B5E;
 }
 
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
 #content_container{
     border: 2px solid #d1d1d1;
 }

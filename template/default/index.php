@@ -13,10 +13,10 @@
             <div id='content_container'>
                 <nav>
                     <ul>
-                        <li>Inicio</li>
-                        <li>Editoras</li>
-                        <li>Livros</li>
-                        <li>Autores</li>
+                        <li><a href='?mod=Editora&page=all'>Inicio</a></li>
+                        <li><a href='?mod=Editora&page=all'>Editoras</a></li>
+                        <li><a href='?mod=Livro&page=all'>Livros</a></li>
+                        <li><a href='?mod=Autor&page=all'>Autores</a></li>
                     </ul>
                 </nav>
                 <article>
